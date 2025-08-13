@@ -14,8 +14,8 @@ def download_course_modules(canvas, course, download_dir="downloads") -> List[Di
     """Download all module items from a course using canvasapi"""
     
     # Create download directory
-    Path(download_dir).mkdir(exist_ok=True)
-    
+    Path(download_dir).mkdir(parents=True, exist_ok=True)
+
     # Get all modules with their items
     modules = course.get_modules(include=['items'])
     
@@ -165,6 +165,7 @@ def main():
     canvas = Canvas(CANVAS_URL, ACCESS_TOKEN)
     course = canvas.get_course(COURSE_ID)
     print(course)
+    print(f"creating {CONTENT_DIR}")
     downloaded_items = download_course_modules(canvas,course,CONTENT_DIR)
 
     # Extract all published pages from published modules
