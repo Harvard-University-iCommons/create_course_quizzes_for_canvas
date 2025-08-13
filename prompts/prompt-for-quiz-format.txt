@@ -1,0 +1,154 @@
+# Instructions for Generating Quiz Questions in text2qti Format
+
+You are tasked with creating quiz questions based on the provided documents. Generate questions in the **text2qti format** which will be converted to Canvas quizzes.
+
+## Output Format Requirements
+
+### Format should be plain text
+Use plain text for the output - do not use Markdown or HTML
+
+### Quiz Header
+Start with:
+```
+Quiz title: [Descriptive Title Based on Content]
+Quiz description: [Brief description of what the quiz covers]
+```
+
+### Question Types and Formats
+
+#### 1. Multiple Choice Questions
+- Use numbered questions: `1.`, `2.`, etc.
+- Use lettered choices: `a)`, `b)`, `c)`, `d)`
+- Mark correct answer with asterisk: `*b) Correct answer`
+- Example:
+```
+1. What is the main topic discussed in the document?
+a) Topic A
+*b) Topic B (this is correct)
+c) Topic C
+d) Topic D
+```
+
+#### 2. Multiple Answer Questions (Select All That Apply)
+- Use `[*]` for correct choices
+- Use `[ ]` for incorrect choices
+- Example:
+```
+2. Which of the following are mentioned in the document? (Select all that apply)
+[*] First correct item
+[*] Second correct item
+[ ] Incorrect item
+[ ] Another incorrect item
+```
+
+#### 3. True/False Questions
+- Example:
+```
+3. The document states that X is true.
+*a) True
+b) False
+```
+
+#### 4. Short Answer Questions
+- Use `*` followed by acceptable answers
+- Example:
+```
+4. What is the author's main argument?
+* Main argument here
+* Alternative phrasing of same argument
+```
+
+#### 5. Essay Questions
+- End with four or more underscores `____`
+- Example:
+```
+5. Analyze the key themes presented in the document.
+... Write a comprehensive analysis discussing at least three major themes.
+____
+```
+
+## Content Guidelines
+
+### Question Quantity
+- Unless specified elsewhere, create a quiz with 10 questions.
+
+### Question Quality
+- Create questions that test **comprehension, analysis, and application** - not just memorization
+- Include questions at different difficulty levels (basic recall, interpretation, critical thinking)
+- Focus on the most important concepts, themes, and details from the documents
+- Avoid overly specific details unless they're crucial to understanding
+- Avoid questions about specific equations, but it is fine to ask about concepts in the equations.  For example instead of asking about equations for a circle, you could ask how the area changes as the radius changes.
+
+### Question Distribution
+Generate approximately:
+- 70% multiple choice questions
+- 20% multiple answer questions  
+- 10% true/false questions
+
+### Answer Choices for Multiple Choice
+- Make all distractors (wrong answers) plausible but clearly incorrect
+- Avoid "all of the above" or "none of the above" unless necessary
+- Keep answer lengths similar
+- Don't make the correct answer obviously longer or more detailed
+
+### Question Types
+- Do not use essay or short answer types, even though the format allows for this
+
+### Feedback (Optional)
+You can add feedback using:
+```
+1. Question text here?
+... General feedback for all students.
++ Feedback for correct answers.
+- Feedback for incorrect answers.
+*a) Correct choice
+... Specific feedback for this choice.
+b) Incorrect choice
+... Specific feedback for this choice.
+```
+
+## Technical Requirements
+
+- **Each question must have exactly one correct answer** (for multiple choice)
+- **No blank lines within a question** - use proper spacing between questions only
+- **Maintain consistent formatting** - asterisks, brackets, and numbering must be exact
+- **Keep questions clear and concise** but comprehensive enough to test understanding
+- **Number questions sequentially** starting from 1
+
+## Example Output Structure
+
+```
+Quiz title: Understanding Climate Change Impacts
+Quiz description: This quiz assesses comprehension of climate change effects discussed in the provided documents.
+
+1. According to the document, what is the primary cause of current climate change?
+a) Natural climate cycles
+*b) Human activities and greenhouse gas emissions
+c) Solar radiation changes
+d) Volcanic activity
+
+2. Which regions are most vulnerable to sea level rise? (Select all that apply)
+[*] Coastal cities
+[*] Small island nations
+[ ] Mountain regions
+[*] River deltas
+[ ] Desert areas
+
+3. The document suggests that climate change effects are irreversible.
+a) True
+*b) False
+
+4. What adaptation strategies are mentioned in the text?
+* Infrastructure improvements
+* Ecosystem restoration
+* Policy changes
+* Community planning
+
+```
+
+## Important Notes
+
+- **Review the generated quiz** before converting to ensure accuracy and clarity
+- **Verify all answers** are correct based on the source documents
+- **Check formatting** carefully - incorrect formatting will cause conversion errors
+- The instructor can edit questions, add feedback, or modify difficulty before importing to Canvas

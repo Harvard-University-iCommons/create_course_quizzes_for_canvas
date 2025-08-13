@@ -1,0 +1,5 @@
+.env
+*.zip
+.DS_Store/*
+course_content/*
+course_quizzes/*
